@@ -1,0 +1,128 @@
+.promos-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+.promos-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.promos-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.promos-back {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #004080;
+}
+
+.promos-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #004080;
+  margin: 0;
+}
+
+/* Cada promo */
+.promo-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1.8px solid #01538D;
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f9fbff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.promo-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.promo-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.promo-nombre {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #004080;
+}
+
+.promo-desc {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0.2rem 0;
+}
+
+.promo-precio {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #004080;
+  margin-top: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .promos-card {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .promo-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.8rem;
+  }
+
+  .promo-info {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .promo-nombre {
+    font-size: 0.95rem;
+  }
+
+  .promo-desc {
+    font-size: 0.85rem;
+  }
+
+  .promo-precio {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+

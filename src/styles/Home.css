@@ -1,0 +1,260 @@
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, #004080, #0073e6);
+  color: white;
+  text-align: center;
+  padding: 60px 25px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  animation: slideUp 1s ease forwards;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.hero h1:hover { color: #e0e0e0; }
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  opacity: 0.95;
+  transition: opacity 0.3s ease;
+}
+.hero p:hover { opacity: 1; }
+.btn-primary {
+  background: white;
+  color: #004080;
+  padding: 12px 28px;
+  border-radius: 24px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.3s ease;
+}
+.btn-primary:hover {
+  background: #e6e6e6;
+  transform: scale(1.05);
+}
+
+/* Banners */
+.home-banners {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 40px;
+  scroll-snap-type: x mandatory;
+  animation: slideLeft 1.2s ease;
+}
+.banner-card {
+  min-width: 85%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 1.2rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  flex-direction: row-reverse;   /* 🔹 ahora la imagen queda al otro lado */
+}
+
+.banner-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+/* Colores de fondo personalizables */
+.banner-blue { background: #156a9f !important; }
+.banner-green { background: #E6F7F1; }
+.banner-yellow { background: #FFF9E5; }
+.banner-pink { background: #FFE6F0; }
+
+.banner-text {
+  flex: 1;
+}
+.banner-text h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #004080;
+  margin-bottom: 0.4rem;
+  transition: transform 0.3s;
+}
+.banner-text h3:hover { transform: scale(1.05); }
+.banner-text p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+.btn-secondary {
+  background: #004080;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.3s ease;
+}
+.btn-secondary:hover {
+  background: #002b59;
+  transform: scale(1.05);
+}
+.banner-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Secciones */
+.section-title {
+  margin: 2rem 0 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004080;
+  border-left: 5px solid #0073e6;
+  padding-left: 10px;
+  animation: slideUp 1s ease;
+}
+
+/* Categorías */
+.categorias-container {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  animation: slideLeft 1.3s ease;
+}
+.categoria-card {
+  min-width: 100px;
+  background: #fff;
+  border: 2px solid #0073e6;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.categoria-card:hover {
+  background: #0073e6;
+  color: white;
+  border-color: #004080;
+}
+.categoria-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Promociones */
+.promociones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+  animation: fadeIn 1.5s ease;
+}
+.promo-card {
+  background: #e9f5ff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.promo-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.promo-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.promo-precio {
+  font-weight: bold;
+  color: #004080;
+  margin: 0.6rem 0;
+  font-size: 1rem;
+}
+.btn-add {
+  background: #004080;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s ease;
+}
+.btn-add:hover {
+  background: #002b59;
+  transform: scale(1.05);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  .hero h1 { font-size: 2.8rem; }
+  .hero p { font-size: 1.2rem; }
+  .banner-card { min-width: 45%; }
+  .categorias-container {
+    justify-content: center;
+    overflow-x: visible;
+    flex-wrap: wrap;
+  }
+  .categoria-card { min-width: 130px; }
+  .promociones-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero { padding: 90px 50px; }
+  .banner-card { min-width: 28%; }
+  .promociones-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+
