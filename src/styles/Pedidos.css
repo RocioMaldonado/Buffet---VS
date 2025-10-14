@@ -173,5 +173,92 @@
   }
 }
 
+/* Desktop */
+@media (min-width: 1024px) {
+  .pedidos-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 2rem;
+    background: none;
+    margin-top: 10rem;
+    
+  }
+
+  .pedidos-card {
+    background: none;
+    box-shadow: none;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .pedidos-header {
+    position: absolute;
+    top: 4.9rem;
+    left: 1.4rem;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .pedidos-title {
+    font-size: 1.7rem;
+    margin: 0;
+  }
+
+  .pedido-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1,9px solid #01538D;
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    background: #f9fbff;
+    transition: transform 0.3s ease;
+    min-height: 160px;
+  }
+
+  .pedido-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .pedido-numero {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .pedido-fecha {
+    font-size: 1rem;
+  }
+
+  .pedido-total {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .pedido-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .pedido-estado {
+    font-size: 0.98rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .btn-detalle {
+    border-radius: 30px;
+    padding: 0.6rem 1.3rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+
+
 
 
