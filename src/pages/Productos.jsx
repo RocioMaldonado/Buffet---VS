@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ProductCard from "../components/ProductCard";
 import "../styles/Productos.css";
 
 function Productos() {
@@ -68,6 +70,19 @@ function Productos() {
             </ul>
             <button className="btn-promo">Paga con QR y obtené 10% OFF</button>
           </div>
+
+          <div className="sidebar-card">
+            <h3>Horarios de Atención</h3>
+            <p>Lun a Vie: 08:00 – 22:00</p>
+            <p>Sábados: 09:00 – 14:00</p>
+          </div>
+
+          <div className="sidebar-card">
+            <h3>Contacto</h3>
+            <p>📍 Blas Parera 132, Burzaco</p>
+            <p>WhatsApp: +54 11 1234-5678</p>
+            <a href="https://maps.google.com" target="_blank" rel="noreferrer">Ver en mapa</a>
+          </div>
         </aside>
 
         {/* Centro */}
@@ -84,8 +99,7 @@ function Productos() {
               <div
                 key={cat.id}
                 className={`categoria-card ${categoriaSeleccionada === cat.id ? "activa" : ""}`}
-                onClick={() => setCategoriaSeleccionada(cat.id)}
-              >
+                onClick={() => setCategoriaSeleccionada(cat.id)} >
                 {cat.nombre}
               </div>
             ))}
@@ -94,12 +108,11 @@ function Productos() {
           <section>
             <div className="productos-grid">
               {productosFiltrados.map((prod) => (
-                <div key={prod.id} className="producto-card">
-                  <img src={prod.img} onClick={() => navigate(`/producto/${prod.id}`)} />
-                  <h3>{prod.nombre}</h3>
-                  <p className="producto-precio">${prod.precio.toLocaleString()}</p>
-                  <button className="btn-add" onClick={() => handleAddToCart(prod)}>+ Añadir</button>
-                </div>
+                <ProductCard
+                  key={prod.id}
+                  producto={prod}
+                  onAddToCart={handleAddToCart}
+                />
               ))}
             </div>
           </section>
@@ -108,25 +121,37 @@ function Productos() {
         {/* Columna derecha */}
         <aside className="productos-sidebar right">
           <div className="sidebar-card">
-            <h3>Recomendados</h3>
-            <p>Brownie — $1200</p>
-            <p>Helado — $1600</p>
+            <h3>⭐ Top Ventas</h3>
+            <p>Hamburguesa + papas — $3500</p>
+            <p>Café + 2 medialunas — $2000</p>
+            <button className="btn-promo">+ Añadir</button>
           </div>
+
           <div className="sidebar-card">
-            <h3>Novedades</h3>
+            <h3>🆕 Novedades</h3>
             <p>Ensalada fresca</p>
             <p>Pizza individual</p>
           </div>
+
           <div className="sidebar-card">
-            <h3>Info útil</h3>
-            <p>🕐 Horarios: 8:00 - 23:00</p>
-            <p>💳 Métodos de pago: QR, Débito, Crédito</p>
+            <h3> Oferta Relámpago</h3>
+            <p>Brownie — 20% OFF</p>
+            <small>Hasta las 18:00</small>
+            <button className="btn-promo">Aprovechar</button>
+          </div>
+
+          <div className="sidebar-card">
+            <h3> Te recomendamos</h3>
+            <p>Si pediste <b>Hamburguesa</b>, añadí <b>Papas grandes</b></p>
+            <p>Si pediste <b>Café con medialuna</b>, probá <b>Brownie</b></p>
           </div>
         </aside>
       </div>
+      <Footer />
     </>
   );
 }
 
 export default Productos;
+
 
