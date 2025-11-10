@@ -21,11 +21,29 @@ function Productos() {
   const [productosData, setProductosData] = useState([]);
   const [mensaje, setMensaje] = useState("");
 
+  // Agregado: estado para filtros
+  const [mostrarFiltros, setMostrarFiltros] = useState(false);
+  const [filtros, setFiltros] = useState({
+    ofertas: false,
+    nuevos: false,
+    masvendidos: false,
+    maxPrecio: 5000,
+  });
+
+  const handleFiltroChange = (e) => {
+    const { id, checked } = e.target;
+    setFiltros((prev) => ({ ...prev, [id]: checked }));
+  };
+
+  const handlePrecioChange = (e) => {
+    setFiltros((prev) => ({ ...prev, maxPrecio: Number(e.target.value) }));
+  };
+
   // Traer productos del backend
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-  const res = await fetch(`${API_URL}/productos`);
+        const res = await fetch(`${API_URL}/productos`);
         const data = await res.json();
         setProductosData(data);
       } catch (error) {
@@ -36,10 +54,16 @@ function Productos() {
     fetchProductos();
   }, []);
 
-  const productosFiltrados =
-    categoriaSeleccionada === "all"
-      ? productosData
-      : productosData.filter((p) => p.categoria === categoriaSeleccionada);
+  // Aplicar filtros además de la categoría
+  const productosFiltrados = productosData
+    .filter((p) => (categoriaSeleccionada === "all" ? true : p.categoria === categoriaSeleccionada))
+    .filter((p) => p.precio <= filtros.maxPrecio)
+    .filter((p) => {
+      if (filtros.ofertas && !p.oferta) return false;
+      if (filtros.nuevos && !p.nuevo) return false;
+      if (filtros.masvendidos && !p.masVendido) return false;
+      return true;
+    });
 
   const handleAddToCart = (producto) => {
     const token = localStorage.getItem('token');
