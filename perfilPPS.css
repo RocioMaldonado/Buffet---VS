@@ -1,0 +1,429 @@
+.perfil-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: calc(100vh - 16px);
+  /* 100% alto de pantalla menos el footer */
+  margin-top: 3.125rem;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.perfil-card {
+  background: white;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.perfil-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #004080;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.perfil-titulo {
+  font-size: 1.375rem;
+  margin: 0;
+  color: #004080;
+  font-weight: 600;
+}
+
+.perfil-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  padding: 10px 14px;
+  border-radius: 14px;
+}
+
+.perfil-icon {
+  position: absolute;
+  left: 27px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: #01538D;
+  pointer-events: none;
+}
+
+.perfil-input {
+  width: 100%;
+  padding-left: 2.8rem !important;
+  background: #dcebf5 !important;
+  border-radius: 28px !important;
+  border: 1.5px solid #b8cde0;
+  box-sizing: border-box;
+}
+
+.perfil-input-card {
+  position: relative;
+}
+
+.perfil-input-card input {
+  width: 100%;
+  background: #dcebf5 !important;        /* CELESTE */
+  border: 1.5px solid #b8cde0;
+  border-radius: 18px !important;
+  padding: 0.72rem 1rem 0.72rem 2.8rem !important;
+  font-size: 1rem;
+  padding-left: 2.9rem !important;
+  outline: none;
+  color: #000;
+  box-sizing: border-box;
+  transition: box-shadow .18s, border-color .18s;
+}
+
+
+/* Placeholder */
+.perfil-input-card input::placeholder {
+  color: #555;
+}
+
+/* Focus igual al login */
+.perfil-input-card input:focus {
+  background: #e7f2ff !important;
+  box-shadow: 0 6px 18px rgba(3, 22, 33, 0.35),
+              0 0 20px rgba(0, 200, 230, 0.06) inset;
+  border-color: rgba(0, 90, 190, 0.65);
+}
+/* Cuando el input tiene texto */
+.perfil-input-card input:not(:placeholder-shown) {
+  background: #E9F3FF !important;
+}
+
+.perfil-input-card .perfil-icon-left {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #01538D;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.perfil-input-card label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+}
+
+.perfil-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.perfil-boton {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.perfil-boton.guardar {
+  background: #01538D;
+  color: white;
+}
+
+.perfil-boton.cancelar {
+  background: white;
+  color: #01538D;
+  border: 2px solid #01538D;
+}
+
+.perfil-boton:hover {
+  transform: scale(1.05);
+}
+
+.perfil-boton.guardar:hover {
+  background: #002b59;
+}
+
+.perfil-boton.cancelar:hover {
+  background: #dcebf5;
+}
+
+/* Responsive para mobile */
+@media (max-width: 600px) {
+  .perfil-card {
+    background: white;
+    border-radius: 16px;
+    border: 1.2px solid #2179b4;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.8rem 1.2rem;
+    width: 90%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .perfil-titulo {
+    font-size: 1.375rem;
+  }
+
+  .perfil-subtitulo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #01538D;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #dcebf5;
+    padding-bottom: 0.5rem;
+    }
+
+  .perfil-input-card label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .perfil-input-card input {
+    width: 90%;
+  background: #dcebf5 !important;
+  border: none;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  padding: 12px 12px 12px 2.8rem !important;
+  outline: none;
+}
+
+  .perfil-actions {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .perfil-boton {
+    width: 98%;
+    font-size: 0.95rem;
+    padding: 0.8rem;
+    border-radius: 25px;
+  }
+
+  /* Ocultar texto de bienvenida */
+  .perfil-bienvenida {
+    display: none;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .perfil-container {
+    min-height: 100vh;
+    padding: 6.8rem 4rem 3rem;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start;
+  }
+
+  .perfil-bienvenida {
+    position: absolute;
+    top: 19rem;
+    left: 6rem;
+    width: 340px;
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+
+  .perfil-bienvenida h3 {
+    color: #01538D;
+  }
+
+  .perfil-card {
+    background: white; 
+    border: 2px solid #2179b4;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    max-width: 930px; 
+    width: 100%;
+    padding: 3rem;
+    margin-right: 2rem; 
+  }
+
+  /* Nuevo título dentro de la card */
+  .perfil-subtitulo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #01538D;
+    margin-bottom: 3rem;
+    border-bottom: 3px solid #1e7dac;
+    padding-bottom: 0.5rem;
+  }
+
+  .perfil-header {
+    position: absolute;
+    top: 5rem;
+    left: 1.5rem;
+    font-weight: 700;
+  }
+
+  .perfil-titulo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .perfil-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Eliminamos el estilo de mini-card individual */
+  .perfil-input-card {
+    position: relative;
+    background: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .perfil-input-card label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    display: block;
+  }
+
+   .perfil-input-card input {
+    width: 100%;
+    background: #dcebf5 !important;
+    border-radius: 18px;
+    padding: 14px 18px 14px 2.8rem !important;
+    border: 1px solid #b8cde0;
+    font-size: 1.1rem;
+    padding-left: 2.7rem !important;
+  }
+
+  .perfil-actions {
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .perfil-boton {
+    font-size: 1.1rem;
+    padding: 0.9rem 2.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    width: 200px;
+  }
+}
+
+/* Responsive para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .perfil-container {
+    min-height: 100vh;
+    padding: 7rem 4rem 3rem;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start;
+  }
+
+  .perfil-header {
+    position: absolute;
+    top: 5rem;
+    left: 1.5rem;
+    font-weight: 700;
+  }
+
+  .perfil-titulo {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .perfil-back {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #003366;
+  }
+
+  /* Card de edición */
+  .perfil-card {
+    background: white;
+    border-radius: 18px;
+    border: 2px solid #2179b4;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    padding: 2rem 2rem;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .perfil-subtitulo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #01538D;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #dcebf5;
+    padding-bottom: 0.5rem;
+  }
+
+  .perfil-input-card {
+    background: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .perfil-input-card label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .perfil-input-card input {
+    width: 94%;
+    background: #dcebf5;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    padding: 12px 16px;
+    outline: none;
+  }
+
+  /* Botones */
+  .perfil-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .perfil-boton {
+    flex: 1;
+    max-width: 280px;
+    font-size: 1rem;
+    border-radius: 30px;
+  }
+
+  /* Ocultar texto de bienvenida */
+  .perfil-bienvenida {
+    display: none;
+  }
+}
