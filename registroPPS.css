@@ -6,7 +6,6 @@
   --primary-hover: #0056b3;
 }
 
-/* FONDO */
 .rg-auth-outer {
   min-height:100vh;
   display:flex;
@@ -17,19 +16,17 @@
   box-sizing:border-box;
 }
 
-/* TARJETA IGUAL AL LOGIN */
 .rg-auth-card {
   width:100%;
   max-width:1000px;
   height:520px;
   position:relative;
-  border-radius:29px;
+  border-radius:20px;
   overflow:hidden;
   box-shadow:var(--shadow);
   border: 1px solid #01538D;
 }
 
-/* Glow */
 .rg-auth-card::before {
   content:"";
   position:absolute;
@@ -43,7 +40,6 @@
   z-index:1;
 }
 
-/* LAYOUT */
 .rg-register-layout {
   display: flex;
   flex-direction: row;
@@ -74,9 +70,10 @@
   background: linear-gradient(
     120deg,
     #dbeefa 0%,
-    #084a9a 600%
+    #1b089a 600%
   );
   clip-path: polygon(0 0, 56% 0, 35% 100%, 0% 100%);
+  transition: clip-path 0.4s ease;
 }
 
 
@@ -85,7 +82,7 @@
   display: flex;
   justify-content: flex-end;     /* contenido a la derecha */
   align-items: center;
-  padding-right: 4rem;           /* separarlo visualmente */
+  padding-right: 3rem;           /* separarlo visualmente */
   position: absolute;
   top: 0;
   right: 0;
@@ -136,21 +133,19 @@
   margin-bottom:rem;
 }
 
-/* LOGO */
 .rg-logo-box {
   display:flex;
   justify-content:center;
   margin-bottom:1rem;
 }
 .rg-buffet-logo {
-  width:72px;
+  width:79px;
   height:auto;
   border-radius:50%;
   background:rgba(255,255,255,0.03);
   padding:8px;
 }
 
-/* TITULO */
 .rg-form-title {
   color: #01538D;
   text-align:center;
@@ -185,12 +180,12 @@
   pointer-events:none;
 }
 .rg-input-icon input {
-  width:87%;
+  width:86%;
   padding:0.72rem 0.1rem 0.70rem 2.8rem;
   border-radius:28px;
   background: white !important;
   border: 1px solid var(--border);
-  color: #000;   /* Mejor contraste con fondo blanco */
+  color: #000;   
   font-size:1rem;
   outline:none;
   transition: box-shadow .18s, border-color .18s;
@@ -221,28 +216,103 @@
 .rg-primary-btn:hover {
   transform: translateY(-2px);
   background: var(--primary-hover);
-  box-shadow: 0 16px 30px rgba(0,162,190,0.18);
+  box-shadow: 0 16px 30px rgba(3, 18, 99, 0.18);
 }
 
 /* MOBILE */
-@media(max-width:800px){
-  .auth-card {
-    max-width:420px;
-    height:auto;
-    border-radius:14px;
+@media (max-width: 820px) {
+
+  .rg-auth-card {
+    height: auto;
+    max-height: none;
   }
-  .register-layout {
-    flex-direction:column;
+
+  .rg-register-layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
   }
-  .panel {
+
+  .rg-panel {
+    width: 100%;
+    min-width: unset;
+    padding: 2rem 1.4rem;
+  }
+
+  /* Panel welcome */
+  .rg-panel-left {
+    clip-path: none !important;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center !important;
+  }
+
+  .rg-welcome-box {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .rg-welcome-text {
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  /* Panel form */
+  .rg-panel-right {
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+  }
+
+  .rg-form-wrapper {
+    margin-top: 0.5rem;
+    max-width: 300px;
+    width: 100%;
+    margin-top: -10px; 
+  }
+
+  .rg-back-button {
+    position: relative;
+    top: 1px; 
+  }
+
+  .rg-input-icon input {
+    width: 100%;
+  }
+
+  .rg-input-icon input{
+    width:85%;
+  }
+}
+
+/* TABLET */
+@media (min-width: 821px) and (max-width: 1100px) {
+  .rg-auth-card {
     width:100%;
-    padding:1.5rem;
+    max-width:1000px;
+    height:520px;
   }
-  .panel-left,
-  .panel-right {
-    clip-path:none;
+
+  .rg-register-layout {
+    display: flex;
+    flex-direction: row;
   }
-  .form-title {
-    font-size:1.2rem;
+
+   .rg-panel-left {
+    display: flex;
+    justify-content: flex-start;   
+    align-items: center;
+    clip-path: polygon(0 0, 54% 0, 35% 100%, 0% 100%);
   }
+
+  .rg-panel-right {
+    display: flex;
+    justify-content: flex-end;     
+    align-items: center;
+  }
+
 }
